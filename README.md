@@ -3,4 +3,4 @@
 ![image](https://github.com/ClassyJuhi/Rock-Paper-Scissors/assets/103419567/2adf53e7-7dcc-4049-a344-45c1149dd342)
 
 
-Site view: https://wwwrockpaperscissors.netlify.app
+Site view: [https://wwwrockpaperscissors.netlify.app](https://classyjuhi.github.io/Rock-Paper-Scissors-game/)https://classyjuhi.github.io/Rock-Paper-Scissors-game/
