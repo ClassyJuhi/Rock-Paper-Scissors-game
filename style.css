@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #eccca2;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(#000000,#191919,#323232);
+    display: flex;
+    flex-direction: column;
+}
+button{
+    background: radial-gradient(#4c4c4c, #323232,#191919, #000000);
+    color: gold;
+}
+a{
+    color: gold;
+    text-decoration: none;
+    font-size: 20px;
+}
+#top{
+    width: 100%;
+    padding: 5px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.top2{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+#actionButtons{
+    display: flex;
+    justify-content: center;
+}
+#actionButtons button {
+    height: 150px;
+    width: 150px;
+    padding: 12px 20px 20px 12px;
+    border-radius: 50%;
+    outline: none;
+    border: 1px solid #eccca2;
+    margin: 10px;
+    position: relative;
+}
+#actionButtons button img{
+    max-width: 120px;
+    height: auto;
+}
+#actionButtons button::before{
+    content: 'Click to start';
+    color: black;
+    border-radius: 5px;
+    background-color: goldenrod;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 15px;
+    position: absolute;
+    bottom: -50px;
+    animation: click1 1s ease-in-out  infinite;
+}
+#actionButtons button::after{
+    content: '';
+    background-color: goldenrod;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: -20px;
+    z-index: -1;
+    animation: click2 1s ease-in-out  infinite;
+}
+@keyframes click1 {
+    0%{
+        bottom: -50px;
+    }
+    50%{
+        bottom: -70px;
+    }
+    100%{
+        bottom: -50px;
+    }
+}
+@keyframes click2 {
+    0%{
+        bottom: -20px;
+    }
+    50%{
+        bottom: -40px;
+    }
+    100%{
+        bottom: -20px;
+    }
+}
+#rules{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #eccca2;
+}
+#reset{
+    width: 200px;
+    height: 80px;
+    position: relative;
+}
+#reset > img{
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+    border: 1px solid #eccca2;
+}
+#actionButtons span, #reset span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: 700;
+    display: none;
+    background-color: rgb(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    color: gold;
+    border: 1px solid #eccca2;
+}
+#actionButtons button:hover span, #reset:hover span{
+    display: flex;
+}
+#reset span{
+    border-radius: 5px;
+}
+#mainContainer{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+    align-items: center;
+}
+#scoreBoard{
+    font-size: 18px;
+    height: 300px;
+    width: 450px;
+    border: 1px solid #eccca2;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#scoreBoard > div{
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 3;
+    border-bottom: 1px solid gold;
+    text-align: center;
+}
+#scoreBoard > div:nth-child(4){
+    border: none;
+}
+#userPoints, #computerPoints, #finalWinner{
+    width: 200px;
+    text-align: center;
+}
+#result{
+    font-size: 50px;
+    font-weight: 700;
+    color: gold;
+    margin: 35px 0;
+}
+.scoreHeading{
+    width: 200px;
+    font-weight: 600;
+    border-right: 1px solid #eccca2;
+}
+#finalWinner{
+    color: gold;
+}
+#liveShow{
+    height: 300px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+#liveShow #celebrate{
+    width: 100%;
+    height: 320px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    display: none;
+}
+.leftHand span, .rightHand span{
+    font-size: 22px;
+    font-weight: 600;
+    color: goldenrod;
+    display: block;
+    text-decoration: dashed underline gold;
+    line-height: 2;
+}
+.leftHand span{
+    text-align: left;
+    margin-left: 40px;
+}
+.rightHand span{
+    text-align: right;
+    margin-right: 30px;
+}
+#liveShow img{
+    width: 270px;
+    height: auto;
+}
+#liveShow img:nth-child(1){
+    transform: rotate(90deg);
+}
+#liveShow img:nth-child(2){
+    transform: rotate(270deg);
+}
+
+#left{
+    animation: shakeLeft 5s linear infinite;
+    animation-play-state: paused;
+}
+@keyframes shakeLeft{
+    0%{
+        transform: rotate(90deg);
+    }
+    2%{
+        transform: rotate(60deg);
+    }
+    50%{
+        transform: rotate(120deg);
+    }
+    100%{
+        transform: rotate(60deg);
+    }
+}
+#right{
+    animation: shakeRight 5s linear infinite;
+    animation-play-state: paused;
+}
+@keyframes shakeRight{
+    0%{
+        transform: rotate(270deg);
+    }
+    2%{
+        transform: rotate(300deg);
+    }
+    50%{
+        transform: rotate(240deg);
+    }
+    100%{
+        transform: rotate(300deg);
+    }
+}
+
+@media (max-width:500px) {
+    body{
+        align-items: center;
+    }
+    #top {
+        padding: 0;
+        flex-direction: column;
+    }
+    .top2{
+        width: 100%;
+        padding: 20px;
+        margin-top: 10px;
+        align-items: center;
+    }
+    #actionButtons button{
+        height: 90px;
+        width: 90px;
+        padding: none;
+        padding: 3px 10px 10px 3px;
+    }
+    #actionButtons button span{
+        font-size: 16px;
+    }
+    #actionButtons button img{
+        width: 80px;
+        height: auto;
+    }
+    #actionButtons button::before{
+        content: 'Click';
+        padding: 3px 8px;  
+        left: 20px;
+        bottom: -25px;
+        z-index: 2;
+    }
+    #actionButtons button::after{
+        height: 15px;
+        width: 15px;
+        bottom: -10px;
+        z-index: 1;
+    }
+    @keyframes click1 {
+        0%{
+            bottom: -25px;
+        }
+        50%{
+            bottom: -35px;
+        }
+        100%{
+            bottom: -25px;
+        }
+    }
+    @keyframes click2 {
+        0%{
+            bottom: -10px;
+        }
+        50%{
+            bottom: -20px;
+        }
+        100%{
+            bottom: -10px;
+        }
+    }
+    #mainContainer{
+        margin: 0;
+    }
+    #liveShow{
+        width: 330px;
+        height: 220px;
+    }
+    #liveShow img{
+        width: 150px;
+        height: auto;
+    }
+    #scoreBoard{
+        width: 320px;
+    }
+    #scoreBoard > div{
+        width: 300px;
+    }
+}

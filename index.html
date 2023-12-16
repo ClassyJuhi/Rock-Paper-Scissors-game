@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/rock.png" type="image/png">
+    <title>Rock paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio loop autoplay src="assets/gameBg.mp3" id="play"></audio>
+    <div id="top">
+        <div id="actionButtons">
+            <button class="game-trigger"><img src="assets/rock.png" alt=""><span
+                    id="rock">Rock</span></button>
+            <button class="game-trigger rs"><img src="assets/scissors.png" alt=""><span
+                    id="scissors">Scissors</span></button>
+            <button class="game-trigger"><img src="assets/paper.png" alt=""><span
+                    id="paper">Paper</span></button>
+        </div>
+        <div class="top2">
+            <button id="rules"><a href="rules.html">Rules</a></button>
+        <div id="reset"><img src="assets/rock-paper-scissors-neon-icons.png"
+                alt=""><span>Reset</span></div>
+        </div>
+        <audio id="celebrateSound" src="assets/winner.mp3"></audio>
+        <audio id="failSound" src="assets/fail...mp3"></audio>
+        <audio id="tieSound" src="assets/tie sound"></audio>
+    </div>
+    <div id="mainContainer">
+        <div id="scoreBoard">
+            <h2 id="result"></h2>
+            <div>
+                <div class="scoreHeading">Your win</div>
+                <div id="userPoints">00</div>
+            </div>
+            <div>
+                <div class="scoreHeading">You lose</div>
+                <div id="computerPoints">00</div>
+            </div>
+            <div>
+                <div class="scoreHeading">Final Winner</div>
+                <div id="finalWinner"></div>
+            </div>
+        </div>
+        <div id="liveShow">
+            <div class="leftHand"><img src="assets/rock.png" alt="" id="left"><span>You</span>
+            </div>
+            <div class="rightHand"><img src="assets/rock.png" alt=""
+                    id="right"><span>Computer</span></div>
+            <img src="assets/celebrationBg...gif" alt="" id="celebrate">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
